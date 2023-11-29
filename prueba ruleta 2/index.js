@@ -61,3 +61,12 @@ function seleccionarTarjetaAleatoria() {
 //     }, 3000); // Cambia el tiempo según sea necesario
 // }
 
+// elegir una tarjeta mediante su clase y modificar su h3
+
+addEventListener('text', function () {
+   
+
+
+
+
+})

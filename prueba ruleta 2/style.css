@@ -1,3 +1,11 @@
+body {
+    background-image: url(/precentacion/CLASE3.webp);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+
+}
+
 .conteiner {
     perspective: 250px;
     width: 300px;
@@ -34,11 +42,10 @@ div {
     text-align: center;
     cursor: pointer;
     animation: carrusel 9s linear infinite;
-
-
 }
 
-.tarjeta h3 {
+
+h3 {
     color: white;
     font-size: 15px;
     font-family: 'Courier New', Courier, monospace;
@@ -60,6 +67,11 @@ button {
 
 }
 
+button:hover {
+    background-color: violet;
+    padding: 15px;
+}
+
 /* input{
     margin-bottom: 300px;
    
@@ -68,7 +80,7 @@ button {
 
 @keyframes carrusel {
     from {
-        transform: rotateY(360deg) translateZ(300px);
+        transform: rotateY(360deg) translateZ(500px);
         z-index: 10;
 
 
@@ -79,7 +91,7 @@ button {
     }
 
     to {
-        transform: rotateX(0deg) translateZ(200px);
+        transform: rotateX(0deg) translateZ(300px);
         z-index: 10;
     }
 }
@@ -179,4 +191,26 @@ button {
     background-image: url(img/img9.jpg);
     background-size: cover;
     animation-delay: -34s;
+}
+
+@media(max-width: 600px) {
+    @keyframes carrusel {
+        from {
+            transform: rotateY(360deg) translateZ(150px);
+            z-index: 10;
+
+
+        }
+
+        50% {
+            z-index: -10;
+        }
+
+        to {
+            transform: rotateX(0deg) translateZ(150px);
+            z-index: 10;
+        }
+    }
+
+
 }
