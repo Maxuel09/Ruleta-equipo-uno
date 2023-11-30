@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <title>Document</title>
+</head>
+
+<body onclick="PlayAudio()">
+
+
+    <div class="container">
+
+
+        <h1 class="container__h1">El panel del alumno</h1>
+        <a href="/proyecto_ruleta/prueba ruleta 2/ruleta.html" <button type="button" class="container__button"> ¡VAMOS
+            ALLÁ!</button>
+
+
+    </div>
+    <audio id="container__audio" autoplay loop>
+        <source src="/precentacion/beep-6-96243.mp3" type="audio/mpeg">
+        <source src="/precentacion/beep-6-96243.mp3" type="audio/ogg">
+        Tu navegador no es compatible con el audio de Html5.
+    </audio>
+    <script>
+        function PlayAudio() {
+            var audio = document.getElementById('container__audio');
+            audio.play();
+        }
+    </script>
+
+
+
+
+</body>
+
+</html>
