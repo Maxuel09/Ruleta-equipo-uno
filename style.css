@@ -34,7 +34,7 @@
   position: static;
 }
 
-.container__button {
+ .container__button.play{
   padding: 10px 20px;
   border: none;
   font-size: 17px;
@@ -43,6 +43,7 @@
   letter-spacing: 4px;
   font-weight: 700;
   text-transform: uppercase;
+  align-items: center;
   transition: 0.5s;
   transition-property: box-shadow;
   background:  rgb(83, 83, 3);
@@ -54,9 +55,13 @@
   position: fixed;
   margin-top: 10%;
   font-size: 120%;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  text-decoration: none;
 }
 
-.container__button:hover {
+.container__button.play:hover {
   box-shadow: 0 0 5px rgb(246, 248, 245),
               0 0 25px rgb(241, 242, 243),
               0 0 50px rgb(242, 245, 248),
@@ -101,3 +106,10 @@
   bottom: 20px;
   z-index: 2;
 }
+
+@media (min-width:600)
+
+
+
+
+@media(max-width)

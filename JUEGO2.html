@@ -8,17 +8,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
     <title>Document</title>
+    
 </head>
 
 <body onclick="PlayAudio()">
+
+    
 
 
     <div class="container">
 
 
         <h1 class="container__h1">El panel del alumno</h1>
-        <button type="button" class="container__button"> ¡VAMOS ALLÁ!</button>
-        
+       <a class onmousedown="container__button.play()" href="ruleta/index.html"> ¡VAMOS ALLÁ!</button>
+        <script>
+            var container__button = new Audio();
+            container__button.src = "imagenes/beep-6-96243.mp3";
+
+        </script>
+
 
     </div>
     <audio id="container__audio" autoplay loop>
@@ -26,12 +34,14 @@
         <source src="imagenes\audio\Strollin' - TrackTribe.mp3" type="audio/ogg">
         Tu navegador no es compatible con el audio de Html5.
     </audio>
+   
     <script>
         function PlayAudio() {
             var audio = document.getElementById('container__audio');
             audio.play();
         }
     </script>
+   
 
 
 
