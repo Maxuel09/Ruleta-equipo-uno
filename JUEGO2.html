@@ -20,12 +20,15 @@
 
 
         <h1 class="container__h1">El panel del alumno</h1>
-       <a class onmousedown="container__button.play()" href="ruleta/index.html"> ¡VAMOS ALLÁ!</button>
-        <script>
-            var container__button = new Audio();
-            container__button.src = "imagenes/beep-6-96243.mp3";
-
-        </script>
+        <button id="miBoton" class="container__button">¡Vamos allá!</button>
+        <audio id="audio" src="imagenes/beep-6-96243.mp3"></audio>
+    <script>
+        document.getElementById('miBoton').onclick = function() {
+    var audio = document.getElementById('audio');
+    audio.play();
+    window.location.href = "https://www.pagina.com";
+};
+    </script>
 
 
     </div>
