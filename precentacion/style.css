@@ -30,13 +30,17 @@
   -webkit-text-stroke-width: 2px;
   -webkit-text-fill-color: rgb(249, 250, 246);
   animation: wiggle 6s linear;
-  margin-top: -5%;
-  position: static;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .container__button {
-  padding: 10px 20px;
-  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  height: 200px;
   font-size: 17px;
   color: #fff;
   border-radius: 7px;
@@ -48,12 +52,10 @@
   background:  rgb(83, 83, 3);
   box-shadow: 0 0 25px  rgb(83, 83, 3);
   border-radius: 100%;
-  height: 25%;
-  width: 12%;
-  margin-bottom: -10%;
   position: fixed;
-  margin-top: 10%;
+  margin-top: 400px;
   font-size: 120%;
+  text-decoration: none;
 }
 
 .container__button:hover {
@@ -101,3 +103,4 @@
   bottom: 20px;
   z-index: 2;
 }
+
