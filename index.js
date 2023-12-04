@@ -1,4 +1,5 @@
 // Obtener referencias a los elementos HTML relevantes
+// Obtener referencias a los elementos HTML relevantes
 const mostrarTodosButton = document.getElementById("mostrarTodos");
 const modal = document.getElementById("myModal");
 const closeModalSpan = document.querySelector(".close");
@@ -8,22 +9,10 @@ const btnAgregarAlumno = document.getElementById("agregarAlumno");
 const btnEliminarSeleccionados = document.getElementById("eliminarSeleccionados");
 const btnSeleccionar = document.getElementById("seleccionar");
 
+const alumnosModal = document.getElementById("alumnosModal");
+
+// Datos de ejemplo (puedes modificarlos con tus propios datos)
 const alumnos = ["Elena", "Alba", "Yadi", "Isaac", "Maxwell","Jander","Raúl","Victor","Denisse","Alfredo","Alicis","Álvaro","Marcela","Joaco","David","Isaac","Anzuly","Paolo","Hannah","Laudy","Alba","Jose"];
-
-// Agregar eventos para mostrar la modal y cerrarla
-mostrarTodosButton.addEventListener("click", () => {
-    mostrarModal();
-});
-
-closeModalSpan.addEventListener("click", () => {
-    cerrarModal();
-});
-
-window.addEventListener("click", (event) => {
-    if (event.target === modal) {
-        cerrarModal();
-    }
-});
 
 // Función para mostrar la modal
 function mostrarModal() {
@@ -87,4 +76,19 @@ btnSeleccionar.addEventListener("click", () => {
     checkboxes.forEach((checkbox) => {
         checkbox.checked = true;
     });
+});
+
+// Agregar eventos para mostrar la modal y cerrarla
+mostrarTodosButton.addEventListener("click", () => {
+    mostrarModal();
+});
+
+closeModalSpan.addEventListener("click", () => {
+    cerrarModal();
+});
+
+window.addEventListener("click", (event) => {
+    if (event.target === modal) {
+        cerrarModal();
+    }
 });
