@@ -1,1 +1,0 @@
-# Ruleta-equipo-uno
