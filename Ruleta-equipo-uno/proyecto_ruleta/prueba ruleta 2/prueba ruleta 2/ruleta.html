@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RULETA</title>
+    <link rel="stylesheet" href="ruleta.css">
+
+</head>
+
+<body>
+<section>
+    <div class="container">
+        <div class="tarjeta" id="card">
+            <h3>Suerte</h3>
+        </div>
+        <div class="tarjeta" id="card">
+            <h3>Sin suerte</h3>
+        </div>
+        <div class="tarjeta" id="card">
+            <h3>Sigamos</h3>
+        </div>
+    </div>
+    </div>
+    <div class="btn">
+        <button onclick="para()" id="para">Para</button>
+
+        <button onclick="iniciaCarrusel()" id="iniciaCarrusel">Inicia Carrusel</button>
+
+        <button class="aleatorio" onclick="seleccionarTarjetaAleatoria()">Elegir Tarjeta Aleatoria</button>
+        <!-- <button onclick="realizarAccion()">Realizar Acción</button> -->
+    </div>
+
+    
+    <h3 class="texto_lista_tarjetas">Lista de Tarjetas:</h3>
+    <div class="caja_participante">
+        <ul id="listaTarjetas"></ul>
+    </div>
+
+
+    <div id="AgregarTarjeta" class="bloketarjeta">
+        <label for="nombreTarjeta">Nombre de la Tarjeta:</label>
+        <input type="text" id="nombreTarjeta" required>
+    
+        <label for="colorTarjeta">Color de la Tarjeta:</label>
+        <input type="color" id="colorTarjeta" value="#ff0000" required><br><br>
+    
+        <button onclick="agregarTarjeta()">Agregar Tarjeta</button>
+    </div>
+    
+    <div class="container_tarjetas">
+        <!-- Este será el contenedor donde se agregarán las tarjetas -->
+    </div>
+    
+    <ul id="listaTarjetas">
+        <!-- Aquí se mostrará la lista de nombres de tarjetas -->
+    </ul>
+
+    <!-- -------------------------------------- -->
+    <script src="ruleta.js"></script>
+</section>
+
+</body>
+
+</html>
