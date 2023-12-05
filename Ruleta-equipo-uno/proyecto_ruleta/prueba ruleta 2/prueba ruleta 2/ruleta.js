@@ -30,56 +30,50 @@ function seleccionarTarjetaAleatoria() {
 
 
     tarjetas[indiceAleatorio].style.display = 'block';
-    
 }
 
 
 
-let nombresTarjetas = []; // Array para almacenar los nombres de las tarjetas
+// let nombresTarjetas = []; // Array para almacenar los nombres de las tarjetas
 
-function agregarTarjeta() {
-    let nombre = document.getElementById("nombreTarjeta").value;
-    let color = document.getElementById("colorTarjeta").value;
+// function agregarTarjeta() {
+//     let nombre = document.getElementById("nombreTarjeta").value;
+//     let color = document.getElementById("colorTarjeta").value;
 
-    let nuevaTarjeta = document.createElement("div");
-    nuevaTarjeta.classList.add("tarjeta");
-    nuevaTarjeta.style.backgroundColor = color;
+//     let nuevaTarjeta = document.createElement("div");
+//     nuevaTarjeta.classList.add("tarjeta");
+//     nuevaTarjeta.style.backgroundColor = color;
 
-    let titulo = document.createElement("h3");
-    titulo.textContent = nombre;
+//     let titulo = document.createElement("h3");
+//     titulo.textContent = nombre;
 
-    nuevaTarjeta.appendChild(titulo);
+//     nuevaTarjeta.appendChild(titulo);
 
-    let contenedor = document.querySelector(".container");
-    contenedor.appendChild(nuevaTarjeta);
+//     let contenedor = document.querySelector(".container");
+//     contenedor.appendChild(nuevaTarjeta);
 
-    nombresTarjetas.push(nombre); // Agregar el nombre al array
-    actualizarListaTarjetas(); // Actualizar la lista en el HTML
+//     nombresTarjetas.push(nombre); // Agregar el nombre al array
+//     actualizarListaTarjetas(); // Actualizar la lista en el HTML
 
-    // Limpiar los campos después de agregar la tarjeta
-    document.getElementById("nombreTarjeta").value = "";
-    document.getElementById("colorTarjeta").value = "#ff0000";
-}
+//     // Limpiar los campos después de agregar la tarjeta
+//     document.getElementById("nombreTarjeta").value = "";
+//     document.getElementById("colorTarjeta").value = "#ff0000";
+// }
 
-function actualizarListaTarjetas() {
-    let listaTarjetas = document.getElementById("listaTarjetas");
-    listaTarjetas.innerHTML = ""; // Limpiar la lista antes de actualizar
+// function actualizarListaTarjetas() {
+//     let listaTarjetas = document.getElementById("listaTarjetas");
+//     listaTarjetas.innerHTML = ""; // Limpiar la lista antes de actualizar
 
-    nombresTarjetas.forEach(function (nombre) {
-        let listItem = document.createElement("li");
-        listItem.textContent = nombre;
-        listaTarjetas.appendChild(listItem);
-    });
-}
+//     nombresTarjetas.forEach(function (nombre) {
+//         let listItem = document.createElement("li");
+//         listItem.textContent = nombre;
+//         listaTarjetas.appendChild(listItem);
+//     });
+// }
 
-// Esta parte del código para eliminar tarjetas parece no estar completa o en uso
-let eliminar = document.createElement("button");
-eliminar.classList.add("btn");
-eliminar.textContent = "Eliminar";
 
-function quitar() {
-    eliminar.remove("nombre");
-}
+
+
 
 const mostrarTodosButton = document.getElementById("mostrarTodos");
 const modal = document.getElementById("myModal");
@@ -124,9 +118,41 @@ function crearCheckbox(nombre) {
     const label = document.createElement("label");
     label.appendChild(checkbox);
     label.appendChild(document.createTextNode(nombre));
+    checkbox.addEventListener("change", function() {
+        if (this.checked) {
+            agregarTarjeta(nombre);
+            
+            // Llama a la función agregarTarjeta pasando el nombre del alumno
+        } else {
+            eliminarTarjeta(nombre);
+            // Puedes implementar alguna lógica para quitar la tarjeta si se desmarca el checkbox
+            // Por ejemplo, buscar y eliminar la tarjeta correspondiente al alumno
+            // O simplemente dejarlo vacío si se desmarca
+        }
+    });
 
     return label;
 }
+// Función para agregar una nueva tarjeta con el nombre dado
+function agregarTarjeta(nombre) {
+    let color = "#ff0000"; // Podrías definir un color predeterminado o elegir uno dinámicamente
+
+    let nuevaTarjeta = document.createElement("div");
+    nuevaTarjeta.classList.add("tarjeta");
+    nuevaTarjeta.style.backgroundColor = color;
+
+    let titulo = document.createElement("h3");
+    titulo.textContent = nombre;
+
+    nuevaTarjeta.appendChild(titulo);
+
+    let contenedor = document.querySelector(".container");
+    contenedor.appendChild(nuevaTarjeta);
+
+}
+
+
+
 
 // Evento para agregar un nuevo alumno
 btnAgregarAlumno.addEventListener("click", () => {
@@ -136,17 +162,33 @@ btnAgregarAlumno.addEventListener("click", () => {
         const nuevoAlumno = crearCheckbox(nombreAlumno);
         alumnosContainer.appendChild(nuevoAlumno);
         inputAlumno.value = "";
+
+
+        const checkbox = nuevoAlumno.querySelector('input[type="checkbox"]');
+        checkbox.addEventListener("change", function() {
+            if (!this.checked) {
+                nuevoAlumno.remove();
     }
 });
 
-// Evento para eliminar alumnos seleccionados
-btnEliminarSeleccionados.addEventListener("click", () => {
-    const checkboxes = alumnosContainer.querySelectorAll('input[type="checkbox"]:checked');
-    checkboxes.forEach((checkbox) => {
-        const label = checkbox.parentElement;
-        alumnosContainer.removeChild(label);
-    });
+}
 });
+
+
+
+// este es el de boton
+btnEliminarSeleccionados.addEventListener("click", () => {
+    let contenedor = document.querySelectorAll('.container');
+    contenedor.forEach((elemento) => {
+        let tarjetas = elemento.querySelectorAll('.tarjeta');
+        tarjetas.forEach((tarjeta) => {
+            tarjeta.remove();
+        });
+    })
+    })
+
+
+
 
 // Evento para seleccionar todos los alumnos
 btnSeleccionar.addEventListener("click", () => {
@@ -174,5 +216,7 @@ window.addEventListener("click", (event) => {
         cerrarModal();
     }
 });
+
+
 
 
