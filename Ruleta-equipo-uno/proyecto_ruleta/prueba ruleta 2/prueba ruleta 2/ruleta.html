@@ -23,13 +23,27 @@
         </div>
     </div>
     </div>
-    <div class="btn">
+    <button id="mostrarTodos">Participantes</button>
+    <div id="myModal" class="modalContainer">
+        <div class="modal-content">
+            <span class="close">Cerrar</span>
+
+
+            <button class="btn-add" id="agregarAlumno">Añadir Alumno</button>
+            <input type="text" placeholder="Añade un alumno" id="inputAlumno">
+            <button class="btn-delete" id="eliminarSeleccionados">Eliminar</button>
+            <button class="btn-select" id="seleccionar">Seleccionar</button>
+            <div class="li-container" id="alumnosContainer">
+            </div>
+        </div>
+    </div>
+    <!-- <div class="btn">
         <button onclick="para()" id="para">Para</button>
 
         <button onclick="iniciaCarrusel()" id="iniciaCarrusel">Inicia Carrusel</button>
 
         <button class="aleatorio" onclick="seleccionarTarjetaAleatoria()">Elegir Tarjeta Aleatoria</button>
-        <!-- <button onclick="realizarAccion()">Realizar Acción</button> -->
+    
     </div>
 
     
@@ -50,12 +64,12 @@
     </div>
     
     <div class="container_tarjetas">
-        <!-- Este será el contenedor donde se agregarán las tarjetas -->
+        
     </div>
     
     <ul id="listaTarjetas">
-        <!-- Aquí se mostrará la lista de nombres de tarjetas -->
-    </ul>
+
+    </ul> -->
 
     <!-- -------------------------------------- -->
     <script src="ruleta.js"></script>
