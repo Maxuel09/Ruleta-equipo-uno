@@ -1,0 +1,98 @@
+
+#mostrarTodos {
+  /* Estilos para el botón circular */
+  width: 150px; /* Ajusta el tamaño del botón */
+  height: 150px; /* Ajusta el tamaño del botón */
+  border-radius: 50%; /* Forma circular */
+  background-color: rgb(247, 158, 15); /* Color de fondo del botón */
+  color: white;
+  font-size:120%;
+  display: flex;
+  text-align: center;
+  align-content: center;
+  align-items: center;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  transition: transform 0.3s, box-shadow 0.3s; /* Transición para efecto al pasar el cursor */
+  font-family: sans-serif;}
+
+/* Efecto al pasar el cursor sobre el botón */
+#mostarTodos :hover {
+  transform: scale(1.1); /* Escala el botón al pasar el cursor */
+  box-shadow: 0px 0px 10px 0px rgba(221, 7, 7, 0.3); /* Sombra al pasar el cursor */
+}
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 5px;
+}
+
+
+
+.btn-add{display: flex;
+  justify-content: center;
+background-color: aquamarine;}
+
+/* Estilos para botón de cerrar (×) */
+.close {
+  float: right;
+  cursor: pointer;
+  font-size: 90%;
+  color: #01080d;
+}
+
+/* Estilos para el contenedor modal */
+.modalContainer {
+  display: none; 
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el contenido modal */
+.modal-content {
+  background-color: rgb(250, 208, 208);
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  margin: auto;
+  width: 50%;
+  max-width: 360px;
+}
+/* Estilos para el contenedor de alumnos */
+.li-container /* Estilos para el contenedor de alumnos */{
+    border: 2px solid #9FB1BC;
+    border-radius: 10px;
+    padding: 6px;
+    margin-top: 20px;
+    background-color: #E6E6FA;
+    max-width: 1980%;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    grid-gap: 10px; /* Espacio entre elementos */
+    justify-items:flex-start; /* Centra los elementos horizontalmente */
+  
+}
+
+.select-all {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.select-all input[type="checkbox"] {
+  margin-right: 5px;
+}
