@@ -5,45 +5,80 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RULETA</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="ruleta.css">
 
 </head>
 
 <body>
-<section>
-    <div class="container">
-        <div class="tarjeta" id="card">
-            <h3>Suerte</h3>
-        </div>
-    </div>
-
-    <button id="mostrarTodos">Participantes</button>
-    <div id="myModal" class="modalContainer">
-        <div class="modal-content">
-            <span class="close">Cerrar</span>
-
-
-            <button class="btn-add" id="agregarAlumno">Añadir Alumno</button>
-            <input type="text" placeholder="Añade un alumno" id="inputAlumno">
-            <button class="btn-delete" id="eliminarSeleccionados">Eliminar</button>
-            <button class="btn-select" id="seleccionar">Seleccionar</button>
-            <div class="li-container" id="alumnosContainer">
+    <section>
+        <div class="container">
+            <div class="tarjeta" id="card">
+                <h3>Suerte</h3>
             </div>
         </div>
+        <div id="btn-PIE">
+            <div class="button-p">
+            
+                
+        <button onclick="para()" id="para"> <svg class="svg-icon" fill="none" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><g stroke="#ff2849" stroke-linecap="round" stroke-width="2"><rect height="14" rx="1.5" width="3" x="15" y="5"></rect><rect height="14" rx="1.5" width="3" x="6" y="5"></rect></g></svg></button>
     </div>
-    
-        <button onclick="para()" id="para">Para</button>
 
         <button onclick="iniciaCarrusel()" id="iniciaCarrusel">Inicia</button>
 
         <button class="aleatorio" onclick="seleccionarTarjetaAleatoria()">Elegir</button>
-    
+        </div>
 
-    
 
-    
-    <script src="ruleta.js"></script>
-</section>
+        <button class="btn" id="mostrarTodos">
+            <span class="text">Participantes</span>
+        </button>
+
+
+
+        
+        <div id="myModal" class="modalContainer">
+            <div class="modal-content">
+                <span class="material-symbols-outlined">
+                    close
+                </span>
+
+                <div class="input-group" >
+                    <input placeholder="Enter new item here" type="text" id="inputAlumno">
+                    <button class="btn-add" id="agregarAlumno"><span>ADD</span></button>
+                </div>
+
+
+
+                <!-- <button class="btn-add" id="agregarAlumno">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" viewBox="0 0 20 20" height="20" fill="none" class="svg-icon"><g stroke-width="1.5" stroke-linecap="round" stroke="#de8a2a"><circle r="7.5" cy="10" cx="10"></circle><path d="m9.99998 7.5v5"></path><path d="m7.5 9.99998h5"></path></g></svg>
+                    <span class="lable">Add</span>
+                </button>
+
+                <input type="text" placeholder="Añade un alumno" id="inputAlumno"> -->
+
+                <button class="btn-delete" id="eliminarSeleccionados">
+                    <svg viewBox="0 0 15 17.5" height="17.5" width="15" xmlns="http://www.w3.org/2000/svg" class="icon">
+                        <path transform="translate(-2.5 -1.25)"
+                            d="M15,18.75H5A1.251,1.251,0,0,1,3.75,17.5V5H2.5V3.75h15V5H16.25V17.5A1.251,1.251,0,0,1,15,18.75ZM5,5V17.5H15V5Zm7.5,10H11.25V7.5H12.5V15ZM8.75,15H7.5V7.5H8.75V15ZM12.5,2.5h-5V1.25h5V2.5Z"
+                            id="Fill"></path>
+                    </svg>
+                </button>
+
+                <button class="btn-select" id="seleccionar">Seleccionar</button>
+                <div class="li-container" id="alumnosContainer">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+
+        <script src="ruleta.js"></script>
+    </section>
 
 </body>
 

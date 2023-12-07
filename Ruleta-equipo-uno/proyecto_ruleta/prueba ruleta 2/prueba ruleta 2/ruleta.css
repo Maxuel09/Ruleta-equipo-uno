@@ -1,16 +1,226 @@
 body {
+    margin: 0;
+    padding: 0;
+
     background-image: url(/Ruleta-equipo-uno/precentacion/CLASE3.webp);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
-    
+
 
 }
-#mostrarTodos {
-    margin-top: 450px;
+
+#btn-PIE {
+    background: #2E2E2E;
+    display: flex;
+    padding: 10px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.button-p {
+    width: 50px;
+    height: 10px;
+    padding: 18px 22px 18px 20px;
+    gap: 1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.label {
+    font-family: sans-serif;
+    height: 23px;
+    font-size: 19px;
+    line-height: 24px;
+    color: #FF2849;
+}
+
+.button-p:hover {
+    background: #ff284839;
+}
+
+.button-p:hover .svg-icon {
+    animation: pulse 0.7s linear infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.13);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/*-----boton paticipantes-----*/
+.btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50px;
+    width: 300px;
+    border-radius: 5px;
+    border: 5px solid rgb(255, 255, 255);
+    cursor: pointer;
+    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+    animation: flickering 2s linear infinite both;
+    text-transform: uppercase;
+    background-color: rgb(83, 82, 82);
+    color: rgb(234, 234, 234);
+    font-weight: 700;
+    transition: 0.6s;
+    box-shadow: 0px 0px 60px #1f4c65;
+    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+}
+
+
+.text {
+    font-size: 1.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn:hover {
+    background-color: black;
+    border-radius: 0;
+}
+
+
+
+
+
+
+
+/*-----boton delete-----*/
+
+.btn-delete {
+    background-color: transparent;
+    position: relative;
+    border: none;
+}
+
+.btn-delete::after {
+    content: 'delete';
+    position: absolute;
+    top: -130%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: fit-content;
+    height: fit-content;
+    background-color: rgb(168, 7, 7);
+    padding: 4px 8px;
+    border-radius: 5px;
+    transition: .2s linear;
+    transition-delay: .2s;
+    color: white;
+    text-transform: uppercase;
+    font-size: 12px;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.icon {
+    transform: scale(1.2);
+    transition: .2s linear;
+}
+
+.btn-delete:hover>.icon {
+    transform: scale(1.5);
+}
+
+.btn-delete:hover>.icon path {
+    fill: rgb(168, 7, 7);
+}
+
+.btn-delete:hover::after {
+    visibility: visible;
+    opacity: 1;
+    top: -160%;
+}
+
+/*-----boton add-----*/
+.input-group {
+    display: flex;
+    flex-direction: row;
+    margin: 0 auto;
+    justify-content: center;
+    max-width: 160px;
+}
+
+.btn-add {
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
+    background: rgb(83, 82, 82);
+    border-radius: 0 10px 10px 0;
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    transition: 0.3s;
+    background-color: chocolate;
+    cursor: pointer;
+}
+
+.btn-add:active {
+    transform: translate(0em, 0.2em);
+}
+
+.btn-add span {
+    font-weight: 800;
+    letter-spacing: 2px;
+    background: #E6E6FA;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
+}
+
+.btn-add:hover span {
+    background: linear-gradient(90deg, #ffffff 0%, #46f6fc 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: 0.3s;
+}
+
+#input-field {
+    background-color: #2E2E2E;
+    border-radius: 10px 0 0 10px;
+    border: none;
+    width: 300px;
+    padding-left: 8px;
+    color: white;
+    font-size: 14px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+::placeholder {
+    color: rgb(184, 184, 184);
+}
+
+
+
+/* #mostrarTodos {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     width: 150px;
-    height: 150px;
-    border-radius: 50%;
+    height: 50px;
     background-color: rgb(247, 158, 15);
     color: white;
     font-size: 120%;
@@ -24,28 +234,31 @@ body {
     transition: transform 0.3s, box-shadow 0.3s;
     font-family: sans-serif;
 }
+
 #mostarTodos :hover {
     transform: scale(1.1);
     box-shadow: 0px 0px 10px 0px rgba(221, 7, 7, 0.3);
 }
 
-button {
+.button {
     padding: 10px 20px;
     border: none;
     border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     margin: 5px;
-}
+} */
 
-.btn-add {
-    display: flex;
+/* .btn-add {
+    display: block;
+    margin: 20px auto;
     justify-content: center;
     background-color: aquamarine;
-}
+} */
 
 
-.close {
+.material-symbols-outlined {
+
     float: right;
     cursor: pointer;
     font-size: 90%;
@@ -63,24 +276,26 @@ button {
     width: 100%;
     height: 100%;
     overflow: auto;
-    
     justify-content: center;
     align-items: center;
 }
 
 
 .modal-content {
+    position: relative;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     background-color: rgb(250, 208, 208);
     padding: 20px;
     border-radius: 10px;
-    position: relative;
-    margin: auto;
     width: 50%;
     max-width: 360px;
 }
 
 .li-container {
-    border: 2px solid #9FB1BC;
+    box-shadow: #424242 0px 0px 10px 0px;
+    border: 2px solid #424242;
     border-radius: 10px;
     padding: 6px;
     margin-top: 20px;
@@ -106,18 +321,8 @@ button {
 }
 
 
-/* .btn {
-    position: relative;
-    bottom: 100px;
-    ;
-} */
 
-/* .aleatorio {
-    display: flex;
-    flex-wrap: wrap;
-    background-color: aqua;
-    flex: 0 1 300px;
-} */
+
 
 .container {
     display: flex;
@@ -136,10 +341,10 @@ button {
     animation: carrusel 9s linear infinite;
 }
 
-/* .texto_lista_tarjetas{
+.texto_lista_tarjetas {
     color: red;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-} */
+}
 
 
 h3 {
@@ -151,28 +356,6 @@ h3 {
 
 }
 
-/* button {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 300px;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 20px;
-    border: none;
-
-} */
-
-/* button:hover {
-    background-color: violet;
-    padding: 15px;
-} */
-
-/* input{
-    margin-bottom: 300px;
-   
-} */
 
 
 @keyframes carrusel {
@@ -214,11 +397,12 @@ h3 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.bloketarjeta{
+.bloketarjeta {
     display: flex;
     flex-direction: column;
     width: 300px;
-    height: 250px;;
+    height: 250px;
+    ;
     margin-top: 10px;
 }
 
