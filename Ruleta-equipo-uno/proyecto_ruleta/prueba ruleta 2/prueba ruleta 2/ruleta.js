@@ -14,6 +14,32 @@ function iniciaCarrusel() {
         tarjeta.style.animationPlayState = 'running';
     });
 }
+//-----------------------sonido------------------------
+document.addEventListener("DOMContentLoaded", function() {
+    const audioFondo = document.getElementById("audioFondo");
+    const controlVolumen = document.getElementById("controlVolumen");
+    const botonMute = document.getElementById("botonMute");
+
+    // Reproducir el sonido al cargar la página
+    audioFondo.play();
+
+    // Control de volumen
+    controlVolumen.addEventListener("input", function() {
+        audioFondo.volume = this.value; // Ajustar el volumen según el control
+    });
+
+    // Botón de mute
+    botonMute.addEventListener("click", function() {
+        if (audioFondo.muted) {
+            audioFondo.muted = false;
+            this.textContent = "Mute";
+        } else {
+            audioFondo.muted = true;
+            this.textContent = "Unmute";
+        }
+    });
+});
+
 
 
 
@@ -29,6 +55,9 @@ function seleccionarTarjetaAleatoria() {
     tarjetas.forEach(function (tarjeta) {
         tarjeta.style.display = 'none';
     });
+    tarjetas[indiceAleatorio].classList.remove('detenerAnimacion');
+    tarjetas[indiceAleatorio].classList.add('animacion');
+
 
 
     tarjetas[indiceAleatorio].style.display = 'block';
@@ -79,7 +108,7 @@ function crearCheckbox(nombre) {
     const label = document.createElement("label");
     label.appendChild(checkbox);
     label.appendChild(document.createTextNode(nombre));
-    checkbox.addEventListener("change", function() {
+    checkbox.addEventListener("change", function () {
         if (this.checked) {
             agregarTarjeta(nombre);
         }
@@ -99,7 +128,7 @@ function crearCheckbox(nombre) {
     const label = document.createElement("label");
     label.appendChild(checkbox);
     label.appendChild(document.createTextNode(nombre));
-    checkbox.addEventListener("change", function() {
+    checkbox.addEventListener("change", function () {
         if (this.checked) {
             agregarTarjeta(nombre);
         } else {
@@ -112,7 +141,7 @@ function crearCheckbox(nombre) {
 
 // Función para agregar una nueva tarjeta con el nombre dado
 function agregarTarjeta(nombre) {
-    let color = generarColorAleatorio(); 
+    let color = generarColorAleatorio();
 
     let nuevaTarjeta = document.createElement("div");
     nuevaTarjeta.classList.add("tarjeta");
@@ -126,13 +155,19 @@ function agregarTarjeta(nombre) {
     let contenedor = document.querySelector(".container");
     contenedor.appendChild(nuevaTarjeta);
 
+    
+
     nuevaTarjeta.setAttribute("id", `tarjeta-${nombre}`);
     tarjetas[nombre] = nuevaTarjeta;
+
 }
+
+
+
 
 // Función para eliminar la tarjeta correspondiente al alumno
 function eliminarTarjeta(nombre) {
-    
+
     const tarjeta = tarjetas[nombre];
     if (tarjeta) {
         tarjeta.remove(); // Eliminar la tarjeta del DOM
@@ -158,11 +193,11 @@ btnAgregarAlumno.addEventListener("click", () => {
 
 btnEliminarSeleccionados.addEventListener("click", () => {
     const checkboxes = document.querySelectorAll('#alumnosContainer input[type="checkbox"]:checked');
-    
+
     checkboxes.forEach((checkbox) => {
         const nombreAlumno = checkbox.value;
         const tarjetaAEliminar = tarjetas[nombreAlumno];
-        
+
         if (tarjetaAEliminar) {
             tarjetaAEliminar.remove(); // Eliminar la tarjeta del DOM
             delete tarjetas[nombreAlumno]; // Eliminar la referencia de la tarjeta
@@ -190,7 +225,7 @@ window.addEventListener("click", (event) => {
     }
 });
 
-document.getElementById("myButton").addEventListener("click", function() {
+document.getElementById("myButton").addEventListener("click", function () {
     window.location.href = "http://127.0.0.1:5500/Ruleta-equipo-uno/precentacion/JUEGO2.html";
 });
 
@@ -205,5 +240,18 @@ function generarColorAleatorio() {
     return color;
 }
 
+const iniciarCarrusel = document.getElementById('iniciarCarrusel');
+iniciarCarrusel.addEventListener('click', () => {
+    let tarjetas = document.querySelectorAll('.tarjeta');
 
+    tarjetas.forEach((tarjeta) => {
+        if (!tarjeta.classList.contains('seleccionada')) {
+            tarjeta.classList.add('animacion');
+        } else {
+            tarjeta.remove(); // Eliminar la tarjeta seleccionada
+        }
+    });
+
+    iniciarCarrusel(); // Continuar la animación del carrusel
+});
 

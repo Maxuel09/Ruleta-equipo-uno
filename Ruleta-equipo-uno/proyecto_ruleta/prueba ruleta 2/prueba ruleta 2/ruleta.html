@@ -12,12 +12,26 @@
 </head>
 
 <body>
+
+    <div class="contenedor-audio">
+        <audio id="audioFondo" loop>
+            <source src="/Ruleta-equipo-uno/proyecto_ruleta/prueba ruleta 2/prueba ruleta 2/children-electro-swing-1_medium-178288.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+        
+        <button class="btn-v" id="botonMute">Mute</button>
+        <input type="range" id="controlVolumen" min="0" max="1" step="0.1" value="0.5">
+    </div>
+
     <section>
         <div class="container">
             <div class="tarjeta" id="card">
                 <h3>Suerte</h3>
             </div>
         </div>
+
+    
+
         <button class="btn-back" id="myButton">
             <svg height="16" width="16" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1024 1024">
                 <path
