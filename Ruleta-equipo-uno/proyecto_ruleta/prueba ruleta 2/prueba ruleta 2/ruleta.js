@@ -43,7 +43,7 @@ const alumnosContainer = document.getElementById("alumnosContainer");
 const inputAlumno = document.getElementById("inputAlumno");
 const btnAgregarAlumno = document.getElementById("agregarAlumno");
 const btnEliminarSeleccionados = document.getElementById("eliminarSeleccionados");
-const btnSeleccionar = document.getElementById("seleccionar");
+
 
 //datos de alumnos
 const alumnos = ["Elena", "Alba", "Yadi", "Isaac", "Maxwell", "Jander", "Raúl", "Victor", "Denisse", "Alfredo", "Alicia", "Álvaro", "Marcela", "Joaco", "David", "Isaac", "Anzuly", "Paolo", "Hannah", "Laudy", "Alba", "Jose"];
@@ -112,7 +112,7 @@ function crearCheckbox(nombre) {
 
 // Función para agregar una nueva tarjeta con el nombre dado
 function agregarTarjeta(nombre) {
-    let color = "#ff0000"; // Podrías definir un color predeterminado o elegir uno dinámicamente
+    let color = generarColorAleatorio(); 
 
     let nuevaTarjeta = document.createElement("div");
     nuevaTarjeta.classList.add("tarjeta");
@@ -126,15 +126,13 @@ function agregarTarjeta(nombre) {
     let contenedor = document.querySelector(".container");
     contenedor.appendChild(nuevaTarjeta);
 
-    // Asignar un identificador único basado en el nombre del alumno
     nuevaTarjeta.setAttribute("id", `tarjeta-${nombre}`);
-    // Guardar la referencia de la tarjeta por nombre de alumno
     tarjetas[nombre] = nuevaTarjeta;
 }
 
 // Función para eliminar la tarjeta correspondiente al alumno
 function eliminarTarjeta(nombre) {
-    // Obtener la referencia de la tarjeta por nombre de alumno
+    
     const tarjeta = tarjetas[nombre];
     if (tarjeta) {
         tarjeta.remove(); // Eliminar la tarjeta del DOM
@@ -158,32 +156,24 @@ btnAgregarAlumno.addEventListener("click", () => {
 
 
 
-
-// este es el de boton
 btnEliminarSeleccionados.addEventListener("click", () => {
-    let contenedor = document.querySelectorAll('.container');
-    contenedor.forEach((elemento) => {
-        let tarjetas = elemento.querySelectorAll('.tarjeta');
-        tarjetas.forEach((tarjeta) => {
-            tarjeta.remove();
-        });
-    })
-    })
-
-
-
-
-// Evento para seleccionar todos los alumnos
-btnSeleccionar.addEventListener("click", () => {
-    mostrarAlumnos();
-    modal.style.display = "block";
-    const checkboxes = alumnosContainer.querySelector('input[type="checkbox"]');
+    const checkboxes = document.querySelectorAll('#alumnosContainer input[type="checkbox"]:checked');
+    
     checkboxes.forEach((checkbox) => {
-        checkbox.checked = true;
+        const nombreAlumno = checkbox.value;
+        const tarjetaAEliminar = tarjetas[nombreAlumno];
+        
+        if (tarjetaAEliminar) {
+            tarjetaAEliminar.remove(); // Eliminar la tarjeta del DOM
+            delete tarjetas[nombreAlumno]; // Eliminar la referencia de la tarjeta
 
-
+            checkbox.parentElement.remove(); // Eliminar el checkbox del DOM
+        }
     });
 });
+
+
+
 
 // Agregar eventos para mostrar la modal y cerrarla
 mostrarTodosButton.addEventListener("click", () => {
@@ -200,6 +190,20 @@ window.addEventListener("click", (event) => {
     }
 });
 
+document.getElementById("myButton").addEventListener("click", function() {
+    window.location.href = "http://127.0.0.1:5500/Ruleta-equipo-uno/precentacion/JUEGO2.html";
+});
+
+function generarColorAleatorio() {
+    const letrasHexadecimales = "0123456789ABCDEF";
+    let color = "#";
+
+    for (let i = 0; i < 6; i++) {
+        color += letrasHexadecimales[Math.floor(Math.random() * 16)];
+    }
+
+    return color;
+}
 
 
 

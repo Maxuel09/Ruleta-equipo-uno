@@ -10,63 +10,334 @@ body {
 
 }
 
-#btn-PIE {
-    background: #2E2E2E;
-    display: flex;
-    padding: 10px;
+/* -----botones P-I-E-----*/
+.btn-pie {
     position: absolute;
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-
 }
 
-.button-p {
-    width: 50px;
-    height: 10px;
-    padding: 18px 22px 18px 20px;
-    gap: 1px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    border-radius: 16px;
+
+.btn-p {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
     border: none;
+    color: #fff;
     cursor: pointer;
+    background-color: #7d2ae8;
+    transition: all 0.2s ease;
 }
 
-.label {
-    font-family: sans-serif;
-    height: 23px;
-    font-size: 19px;
-    line-height: 24px;
-    color: #FF2849;
+.btn-p:active {
+    transform: scale(0.96);
 }
 
-.button-p:hover {
-    background: #ff284839;
+.btn-p:before,
+.btn-p:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
 }
 
-.button-p:hover .svg-icon {
-    animation: pulse 0.7s linear infinite;
+.btn-p:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 0.6s ease;
 }
 
-@keyframes pulse {
+@keyframes greentopBubbles {
     0% {
-        transform: scale(1);
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
     }
 
     50% {
-        transform: scale(1.13);
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
     }
 
     100% {
-        transform: scale(1);
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.btn-p:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+            105% 0%;
+    }
+
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+            110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.btn-i {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #7d2ae8;
+    transition: all 0.2s ease;
+}
+
+.btn-i:active {
+    transform: scale(0.96);
+}
+
+.btn-i:before,
+.btn-i:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+}
+
+.btn-i:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.btn-i:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+            105% 0%;
+    }
+
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+            110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.btn-e {
+    position: relative;
+    padding: 10px 22px;
+    border-radius: 6px;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    background-color: #7d2ae8;
+    transition: all 0.2s ease;
+}
+
+.btn-e:active {
+    transform: scale(0.96);
+}
+
+.btn-e:before,
+.btn-e:after {
+    position: absolute;
+    content: "";
+    width: 150%;
+    left: 50%;
+    height: 100%;
+    transform: translateX(-50%);
+    z-index: -1000;
+    background-repeat: no-repeat;
+}
+
+.btn-e:hover:before {
+    top: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 20%, #7d2ae8 20%, transparent 30%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%,
+        10% 10%, 18% 18%;
+    background-position: 50% 120%;
+    animation: greentopBubbles 0.6s ease;
+}
+
+@keyframes greentopBubbles {
+    0% {
+        background-position: 5% 90%, 10% 90%, 10% 90%, 15% 90%, 25% 90%, 25% 90%,
+            40% 90%, 55% 90%, 70% 90%;
+    }
+
+    50% {
+        background-position: 0% 80%, 0% 20%, 10% 40%, 20% 0%, 30% 30%, 22% 50%,
+            50% 50%, 65% 20%, 90% 30%;
+    }
+
+    100% {
+        background-position: 0% 70%, 0% 10%, 10% 30%, 20% -10%, 30% 20%, 22% 40%,
+            50% 40%, 65% 10%, 90% 20%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
+    }
+}
+
+.btn-e:hover::after {
+    bottom: -70%;
+    background-image: radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, transparent 10%, #7d2ae8 15%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%),
+        radial-gradient(circle, #7d2ae8 20%, transparent 20%);
+    background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+    background-position: 50% 0%;
+    animation: greenbottomBubbles 0.6s ease;
+}
+
+@keyframes greenbottomBubbles {
+    0% {
+        background-position: 10% -10%, 30% 10%, 55% -10%, 70% -10%, 85% -10%,
+            70% -10%, 70% 0%;
+    }
+
+    50% {
+        background-position: 0% 80%, 20% 80%, 45% 60%, 60% 100%, 75% 70%, 95% 60%,
+            105% 0%;
+    }
+
+    100% {
+        background-position: 0% 90%, 20% 90%, 45% 70%, 60% 110%, 75% 80%, 95% 70%,
+            110% 10%;
+        background-size: 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%, 0% 0%;
     }
 }
 
 
-/*-----boton paticipantes-----*/
+/* -----boton home-----*/
+.btn-back {
+    position: absolute;
+    top: 80%;
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: #eeeeee4b;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
+    cursor: pointer;
+    border: none;
+    background: #fff;
+}
+
+.btn-back>svg {
+    margin-right: 5px;
+    margin-left: 5px;
+    font-size: 20px;
+    transition: all 0.4s ease-in;
+}
+
+.btn-back:hover>svg {
+    font-size: 1.2em;
+    transform: translateX(-5px);
+}
+
+.btn-back:hover {
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
+}
+
+/*-----boton participantes-----*/
 .btn {
     position: absolute;
     top: 50%;
@@ -100,38 +371,18 @@ body {
 }
 
 
-
-
-
-
-
 /*-----boton delete-----*/
 
 .btn-delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20px;
     background-color: transparent;
     position: relative;
     border: none;
 }
 
-.btn-delete::after {
-    content: 'delete';
-    position: absolute;
-    top: -130%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: fit-content;
-    height: fit-content;
-    background-color: rgb(168, 7, 7);
-    padding: 4px 8px;
-    border-radius: 5px;
-    transition: .2s linear;
-    transition-delay: .2s;
-    color: white;
-    text-transform: uppercase;
-    font-size: 12px;
-    opacity: 0;
-    visibility: hidden;
-}
 
 .icon {
     transform: scale(1.2);
@@ -143,7 +394,7 @@ body {
 }
 
 .btn-delete:hover>.icon path {
-    fill: rgb(168, 7, 7);
+    fill: #7d2ae8;
 }
 
 .btn-delete:hover::after {
@@ -163,7 +414,7 @@ body {
 
 .btn-add {
     font-size: 17px;
-    padding: 0.5em 2em;
+    padding: 5px 10px;
     border: transparent;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
     background: rgb(83, 82, 82);
@@ -173,7 +424,7 @@ body {
 
 .btn-add:hover {
     transition: 0.3s;
-    background-color: chocolate;
+    background-color:#7d2ae8;
     cursor: pointer;
 }
 
@@ -214,47 +465,7 @@ body {
 
 
 
-/* #mostrarTodos {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 150px;
-    height: 50px;
-    background-color: rgb(247, 158, 15);
-    color: white;
-    font-size: 120%;
-    display: flex;
-    text-align: center;
-    align-content: center;
-    align-items: center;
-    border: none;
-    cursor: pointer;
-    outline: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-    font-family: sans-serif;
-}
 
-#mostarTodos :hover {
-    transform: scale(1.1);
-    box-shadow: 0px 0px 10px 0px rgba(221, 7, 7, 0.3);
-}
-
-.button {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 16px;
-    margin: 5px;
-} */
-
-/* .btn-add {
-    display: block;
-    margin: 20px auto;
-    justify-content: center;
-    background-color: aquamarine;
-} */
 
 
 .material-symbols-outlined {
@@ -292,6 +503,7 @@ body {
     width: 50%;
     max-width: 360px;
 }
+
 
 .li-container {
     box-shadow: #424242 0px 0px 10px 0px;
@@ -331,6 +543,9 @@ body {
 }
 
 .tarjeta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100px;
     height: 150px;
     font-size: 40px;
@@ -339,6 +554,7 @@ body {
     text-align: center;
     cursor: pointer;
     animation: carrusel 9s linear infinite;
+
 }
 
 .texto_lista_tarjetas {
@@ -377,7 +593,8 @@ h3 {
 }
 
 #card {
-    background-color: black;
+    display: none;
+    background-color: rgb(174, 0, 0);
 
 }
 
@@ -387,13 +604,13 @@ h3 {
     justify-content: left;
     width: 30%;
     height: 50%;
-    background-color: aliceblue;
+    background-color: rgb(255, 0, 0);
     margin-top: 0%;
     text-decoration: none;
 }
 
 .titulo_agregar_tarjeta {
-    color: red;
+    color: rgb(255, 255, 255);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
