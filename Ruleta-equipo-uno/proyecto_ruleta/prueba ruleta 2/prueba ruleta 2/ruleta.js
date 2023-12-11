@@ -48,20 +48,24 @@ function seleccionarTarjetaAleatoria() {
     let tarjetas = document.querySelectorAll('.tarjeta');
     let cantidadTarjetas = tarjetas.length;
 
-
     let indiceAleatorio = Math.floor(Math.random() * cantidadTarjetas);
 
-    // Ocultar todas las tarjetas
-    tarjetas.forEach(function (tarjeta) {
+    tarjetas.forEach(function (tarjeta, indice) {
         tarjeta.style.display = 'none';
+        tarjeta.style.width = '300px';
+        tarjeta.style.color = 'white';
+
+        if (indice === indiceAleatorio) {
+            tarjeta.textContent = 'Ha sido seleccionad@ ' + tarjetas[indiceAleatorio].textContent;
+            tarjeta.style.display = 'block';
+            tarjeta.style.color = 'white';
+        }
     });
+
     tarjetas[indiceAleatorio].classList.remove('detenerAnimacion');
     tarjetas[indiceAleatorio].classList.add('animacion');
-
-
-
-    tarjetas[indiceAleatorio].style.display = 'block';
 }
+
 
 
 
@@ -255,4 +259,5 @@ iniciarCarrusel.addEventListener('click', () => {
 
     iniciarCarrusel(); // Continuar la animación del carrusel
 });
+
 

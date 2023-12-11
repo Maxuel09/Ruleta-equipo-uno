@@ -418,14 +418,14 @@ body {
     padding: 5px 10px;
     border: transparent;
     box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24);
-    background: rgb(83, 82, 82);
+    background: rgb(6, 6, 6);
     border-radius: 0 10px 10px 0;
     transition: 0.3s;
 }
 
 .btn-add:hover {
     transition: 0.3s;
-    background-color: #7d2ae8;
+    background-color: #36005b;
     cursor: pointer;
 }
 
@@ -442,12 +442,6 @@ body {
     transition: 0.3s;
 }
 
-.btn-add:hover span {
-    background: linear-gradient(90deg, #ffffff 0%, #46f6fc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    transition: 0.3s;
-}
 
 /* color para imput nombre*/
 ::placeholder {
@@ -773,7 +767,7 @@ h3 {
     border: none;
     color: #fff;
     cursor: pointer;
-    background-color: #7d2ae8;
+    background-color: rgb(125, 42, 232);
     transition: all 0.2s ease;
     margin-right: 10px;
 }
