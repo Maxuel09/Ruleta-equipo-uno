@@ -1,6 +1,7 @@
 * {
     font-family: 'Concert One', sans-serif;
 }
+
 body {
     margin: 0;
     padding: 0;
@@ -380,6 +381,7 @@ body {
     background-color: transparent;
     position: relative;
     border: none;
+    margin-top: -4%;
 }
 
 
@@ -450,6 +452,13 @@ body {
 /* color para imput nombre*/
 ::placeholder {
     color: rgb(184, 184, 184);
+
+
+}
+
+#inputAlumno {
+    border-radius: 10px 0px 0px 10px;
+    border-color: #fff;
 }
 
 
@@ -459,6 +468,7 @@ body {
     cursor: pointer;
     font-size: 90%;
     color: #fff;
+    margin-bottom: 0%;
 }
 
 
@@ -648,8 +658,7 @@ h3 {
         width: 40px;
     }
 
-    .btn-back {
-    }
+    .btn-back {}
 
     .tarjeta {
         display: flex;
@@ -665,13 +674,31 @@ h3 {
         animation: carrusel 9s linear infinite;
 
     }
-    #inputAlumno{
+
+    #inputAlumno {
         width: 80px;
     }
-    .btn-add{
+
+    .btn-add {
         width: 80px;
         font-size: small;
     }
+
+
+    .li-container {
+        font-size: small;
+
+    }
+
+    #delete {
+        margin-bottom: 55%;
+    }
+        ::placeholder {
+            color: rgb(184, 184, 184);
+            font-size: small;
+    
+    
+        }
 }
 
 /* -------------animaciones de festejo-----*/

@@ -35,9 +35,7 @@
 
     <section>
         <div class="container">
-            <div class="tarjeta" id="card">
-                <h3>Suerte</h3>
-            </div>
+            
         </div>
 
 
@@ -54,7 +52,7 @@
 
         <div class="btn-pie">
             <button class="btn-p" onclick="para()" id="para"><span class="material-symbols-outlined">
-                    pause
+                    stop
                 </span></button>
             <button class="btn-i" onclick="iniciaCarrusel()" id="iniciaCarrusel"><span
                     class="material-symbols-outlined">
@@ -62,7 +60,7 @@
                 </span></button>
             <button class="btn-e" onclick="seleccionarTarjetaAleatoria()" id="seleccionarTarjetaAleatoria"><span
                     class="material-symbols-outlined">
-                    shuffle
+                    shuffle_on
                 </span></button>
 
         </div>
@@ -77,13 +75,14 @@
 
         <div id="myModal" class="modalContainer">
             <div class="modal-content">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" id="close">
                     close
                 </span>
 
                 <div class="input-group">
                     <input placeholder="Nombre del Alumno" type="text" id="inputAlumno">
                     <button class="btn-add" id="agregarAlumno"><span>Agregar</span></button>
+                    
                 </div>
 
 
@@ -91,7 +90,7 @@
 
 
                 <button class="btn-delete" id="eliminarSeleccionados">
-                <span class="material-symbols-outlined">
+                <span class="material-symbols-outlined" id="delete">
                     delete
                 </span>
                 </button>

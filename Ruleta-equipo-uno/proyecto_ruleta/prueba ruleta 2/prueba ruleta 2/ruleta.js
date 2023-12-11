@@ -68,6 +68,7 @@ function seleccionarTarjetaAleatoria() {
 const mostrarTodosButton = document.getElementById("mostrarTodos");
 const modal = document.getElementById("myModal");
 const closeModalSpan = document.querySelector(".material-symbols-outlined");
+const close = document.getElementById("close");
 const alumnosContainer = document.getElementById("alumnosContainer");
 const inputAlumno = document.getElementById("inputAlumno");
 const btnAgregarAlumno = document.getElementById("agregarAlumno");
@@ -215,7 +216,7 @@ mostrarTodosButton.addEventListener("click", () => {
     mostrarModal();
 });
 
-closeModalSpan.addEventListener("click", () => {
+close.addEventListener("click", () => {
     cerrarModal();
 });
 
