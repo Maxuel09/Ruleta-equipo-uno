@@ -1,7 +1,9 @@
+* {
+    font-family: 'Concert One', sans-serif;
+}
 body {
     margin: 0;
     padding: 0;
-
     background-image: url(/Ruleta-equipo-uno/precentacion/CLASE3.webp);
     background-repeat: no-repeat;
     background-size: cover;
@@ -13,7 +15,7 @@ body {
 /* -----botones P-I-E-----*/
 .btn-pie {
     position: absolute;
-    top: 40%;
+    top: 5%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
@@ -339,24 +341,20 @@ body {
 
 /*-----boton participantes-----*/
 .btn {
+    color: #fff;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 50px;
-    width: 300px;
-    border-radius: 5px;
-    border: 5px solid rgb(255, 255, 255);
+    top: 8%;
+    display: flex;
+    height: 3em;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    transition: all 0.2s linear;
     cursor: pointer;
-    filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
-    animation: flickering 2s linear infinite both;
-    text-transform: uppercase;
-    background-color: rgb(83, 82, 82);
-    color: rgb(234, 234, 234);
-    font-weight: 700;
-    transition: 0.6s;
-    box-shadow: 0px 0px 60px #1f4c65;
-    -webkit-box-reflect: below 10px linear-gradient(to bottom, rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.4));
+    border: none;
+    background: #7d2ae8;
 }
 
 
@@ -366,8 +364,9 @@ body {
 }
 
 .btn:hover {
-    background-color: #7d2ae8;
-    border-radius: 0;
+    transform: translateX(-2px);
+    box-shadow: 9px 9px 33px #d1d1d1, -9px -9px 33px #ffffff;
+    transform: translateY(-2px);
 }
 
 
@@ -459,51 +458,36 @@ body {
     float: right;
     cursor: pointer;
     font-size: 90%;
-    color: #7d2ae8;
+    color: #fff;
 }
 
 
 .modalContainer {
-    
-    margin-top: 400px;
     display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    justify-content: center;
-    align-items: center;
+
 }
 
 
 .modal-content {
     box-shadow: #000000 0px 0px 10px 0px;
     position: relative;
-    top: 30%;
+    top: 350px;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: rgb(250, 208, 208);
+    background-color: #7d2ae8;
     padding: 20px;
     border-radius: 10px;
     width: 50%;
-    max-width: 360px;
 }
 
 
 .li-container {
-    box-shadow: #424242 0px 0px 10px 0px;
-    border: 2px solid #424242;
     border-radius: 10px;
     padding: 6px;
     margin-top: 20px;
-    background-color: #E6E6FA;
-    max-width: 1980%;
+    background-color: #fff;
     margin-left: auto;
     margin-right: auto;
-
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 10px;
@@ -632,7 +616,62 @@ h3 {
         }
     }
 
+    .modal-content {
+        width: 80%;
+    }
 
+    .btn-pie {
+        display: flex;
+    }
+
+    .btn-p {
+        display: flex;
+        justify-content: center;
+        width: 10px;
+
+
+    }
+
+    .btn-i {
+        display: flex;
+        justify-content: center;
+        width: 10px;
+    }
+
+    .btn-e {
+        display: flex;
+        justify-content: center;
+        width: 10px;
+    }
+
+    .btn {
+        width: 40px;
+    }
+
+    .btn-back {
+    }
+
+    .tarjeta {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 80px;
+        height: 140px;
+        font-size: 40px;
+        position: absolute;
+        border-radius: 30px;
+        text-align: center;
+        cursor: pointer;
+        animation: carrusel 9s linear infinite;
+
+    }
+    #inputAlumno{
+        width: 80px;
+    }
+    .btn-add{
+        width: 80px;
+        font-size: small;
+    }
 }
 
 /* -------------animaciones de festejo-----*/
