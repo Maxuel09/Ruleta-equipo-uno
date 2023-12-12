@@ -28,5 +28,5 @@ function redireccion(){
     location.href = "venta.btn"
 }
 document.getElementById("btn-1").addEventListener("click", function () {
-    window.location.href = "http://127.0.0.1:5500/Ruleta-equipo-uno/proyecto_ruleta/prueba%20ruleta%202/prueba%20ruleta%202/ruleta.html";
+    window.location.href = "/Ruleta-equipo-uno/proyecto_ruleta/prueba ruleta 2/prueba ruleta 2/ruleta.html";
 });
