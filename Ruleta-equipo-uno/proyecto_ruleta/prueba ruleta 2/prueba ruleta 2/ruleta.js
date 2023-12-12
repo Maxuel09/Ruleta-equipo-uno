@@ -1,5 +1,6 @@
 
 
+
 function para() {
     let tarjetas = document.querySelectorAll('.tarjeta'); // Obtener todas las tarjetas
 
@@ -59,6 +60,12 @@ function seleccionarTarjetaAleatoria() {
             tarjeta.textContent = 'Ha sido seleccionad@ ' + tarjetas[indiceAleatorio].textContent;
             tarjeta.style.display = 'block';
             tarjeta.style.color = 'white';
+
+            for (let i = 0; i < 20; i++) {
+                const confeti = document.createElement('div');
+                confeti.classList.add('confeti');
+                tarjeta.appendChild(confeti);
+            }
         }
     });
 
@@ -261,3 +268,17 @@ iniciarCarrusel.addEventListener('click', () => {
 });
 
 
+function generarConfetiEnPosicion(x, y) {
+    const myConfetti = confetti.create(document.getElementById('confetti-container'), {
+        resize: true,
+        useWorker: true,
+    });
+
+    myConfetti({
+        particleCount: 100,
+        spread: 100,
+        origin: { x, y },
+    });
+}
+// Ejemplo de uso:
+generarConfetiEnPosicion(100, 100); 
